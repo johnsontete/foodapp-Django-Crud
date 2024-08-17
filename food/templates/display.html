@@ -1,0 +1,27 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<div class="album py-5 bg-light">
+  <div class="container">
+
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-5">
+      {%for item in data%}
+      <a href="{%url 'seperate_view' item.id %}">
+      <div class="col">
+        <div class="card shadow-sm ">
+          
+          <img class="d-img" src="{{item.recipe_image.url}}" alt="">
+          <div class="card-body">
+            <p><b>{{item.recipe_name}}</b></p>
+            <p class="card-text">{{item.recipe_description}}</p>
+            <div class="d-flex btn-group">
+            </div>
+          </div>
+        </div>
+      </div>
+    </a>
+      {%endfor%}
+    </div>
+  </div>
+</div>
+{% endblock %}

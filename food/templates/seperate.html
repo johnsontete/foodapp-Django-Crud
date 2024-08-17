@@ -1,0 +1,26 @@
+{%extends 'base.html'%}
+
+{%block content%}
+<div class="container">
+    <div class="row d-flex">
+        <div class="col-md-6 card">
+            <img src="{{data.recipe_image.url}}" alt="" class="s-img">
+        </div>
+        <div class="col-md-6 card">
+            <div>
+                <h4><b>{{data.recipe_name}}</b></p>
+            </div>
+            <div>
+                <p>{{data.recipe_description}}</p>
+            </div>
+            <div class="d-flex btn-group mt-2">
+                <div>
+                  <a href="{%url 'delete_it' data.id%}"><button class="btn btn-md btn-outline-danger">Delete</button></a>
+                </div>
+                <div>
+                  <a href="{%url 'edit_it' data.id%}"><button  class="btn btn-md btn-outline-secondary">Edit</button></a>  
+                </div>
+        </div>
+    </div>
+</div>
+{%endblock%}
